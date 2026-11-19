@@ -1251,7 +1251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8051141828b941441adfd4c9f5ff7cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarrrelPrefab
-  lifetime: 100
+  scoreGiven: 100
+  lifetime: 80
 --- !u!1 &1251349452
 GameObject:
   m_ObjectHideFlags: 0
