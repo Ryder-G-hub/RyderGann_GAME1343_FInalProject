@@ -4,6 +4,7 @@ public class BarrrelPrefab : MonoBehaviour
 {
     public int scoreGiven = 100;
     public float lifetime = 80;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,14 +16,18 @@ public class BarrrelPrefab : MonoBehaviour
     {
         
     }
-
-    public void AddScore()
-    {
-        
-    }
     
-    public void HitPlayer()
+    public void HitPlayer(int value)
     {
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("OilBarrel"))
+        {
+            Destroy(gameObject);
+        }
 
     }
 }
