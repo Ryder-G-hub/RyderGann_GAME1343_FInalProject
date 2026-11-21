@@ -1510,8 +1510,8 @@ MonoBehaviour:
   jumpHeight: 5
   groundCheckDistance: 0.2
   jumpOverCheckDistance: 4
-  scoreText: {fileID: 0}
-  livesText: {fileID: 0}
+  scoreText: {fileID: 179059619}
+  livesText: {fileID: 1943558744}
   inputNumber: 1
   playerScore: 0
   playerLives: 3

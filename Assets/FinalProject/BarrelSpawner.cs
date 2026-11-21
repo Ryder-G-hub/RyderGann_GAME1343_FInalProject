@@ -15,6 +15,11 @@ public class BarrelSpawner : MonoBehaviour
         spawnerCollider = GetComponent<Collider>();
         spawnTimer = spawnInterval;
 
+        if (barrelPrefab != null && barrelPrefab.scene.IsValid())
+        {
+            barrelPrefab.SetActive(false);
+        }
+
         if (spawnOnStart)
         {
             SpawnBarrel();
@@ -50,7 +55,13 @@ public class BarrelSpawner : MonoBehaviour
         }
 
         GameObject barrel = Instantiate(barrelPrefab, transform.position, barrelPrefab.transform.rotation);
+        barrel.SetActive(true);
 
+        BarrrelPrefab barrelScript = barrel.GetComponent<BarrrelPrefab>();
+        if (barrelScript != null)
+        {
+            barrelScript.scored = false;
+        }
         Collider barrelCollider = barrel.GetComponent<Collider>();
         if (spawnerCollider != null && barrelCollider != null)
         {
