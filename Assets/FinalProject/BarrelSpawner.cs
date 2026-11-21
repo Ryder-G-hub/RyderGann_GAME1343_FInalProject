@@ -7,19 +7,54 @@ public class BarrelSpawner : MonoBehaviour
     public float spawnInterval = 3.0f;
     public bool spawnOnStart = true;
 
+    private float spawnTimer;
+    private Collider spawnerCollider;
+
+    void Start()
+    {
+        spawnerCollider = GetComponent<Collider>();
+        spawnTimer = spawnInterval;
+
+        if (spawnOnStart)
+        {
+            SpawnBarrel();
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
     {
+        if (spawnOnStart && spawnInterval > 0)
+        {
+            spawnTimer -= Time.deltaTime;
+            if (spawnTimer <=0)
+            {
+                SpawnBarrel();
+                spawnTimer = spawnInterval;
+            }
+        }
+
         Keyboard kb = Keyboard.current;
-        if(kb == null)
+        if (kb != null && kb.spaceKey.wasPressedThisFrame)
+        {
+            SpawnBarrel();
+        }
+    }
+
+    void SpawnBarrel()
+    {
+        if (barrelPrefab == null)
         {
             return;
         }
 
-        if(kb.spaceKey.wasPressedThisFrame)
+        GameObject barrel = Instantiate(barrelPrefab, transform.position, barrelPrefab.transform.rotation);
+
+        Collider barrelCollider = barrel.GetComponent<Collider>();
+        if (spawnerCollider != null && barrelCollider != null)
         {
-            Instantiate(barrelPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            Physics.IgnoreCollision(spawnerCollider, barrelCollider);
         }
     }
 }

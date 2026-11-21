@@ -988,7 +988,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5032387737474653051, guid: cd338e76ca1e2524d84c3254a33b2e27, type: 3}
       insertIndex: -1
       addedObject: {fileID: 922057355}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9197934844495309549, guid: cd338e76ca1e2524d84c3254a33b2e27, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1004441130}
   m_SourcePrefab: {fileID: 100100000, guid: cd338e76ca1e2524d84c3254a33b2e27, type: 3}
 --- !u!1 &900857845
 GameObject:
@@ -1335,6 +1338,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5032387737474653051, guid: cd338e76ca1e2524d84c3254a33b2e27, type: 3}
   m_PrefabInstance: {fileID: 869016447}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1004441130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004441120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8051141828b941441adfd4c9f5ff7cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BarrrelPrefab
+  scoreGiven: 100
+  lifetime: 80
+  scored: 0
 --- !u!1 &1315052438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,6 +1507,11 @@ MonoBehaviour:
   PlayerModel: {fileID: 794682519}
   moveSpeed: 4
   gravity: -9.8
+  jumpHeight: 5
+  groundCheckDistance: 0.2
+  jumpOverCheckDistance: 4
+  scoreText: {fileID: 0}
+  livesText: {fileID: 0}
   inputNumber: 1
   playerScore: 0
   playerLives: 3
