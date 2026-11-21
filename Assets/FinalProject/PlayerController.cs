@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     public GameObject PlayerModel; 
     public float moveSpeed = 4f;
     public float gravity = -9.8f;
+
+    public float jumpHeight = 5f;
     public int inputNumber = 1;
     public int playerScore = 0;
     public int playerLives = 3;
