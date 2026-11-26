@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour
     public float jumpOverCheckDistance = 4.0f;
     public TMP_Text scoreText;
     public TMP_Text livesText;
+
+    public AudioClip clip_jump;
+
+    public AudioClip clip_hit;
+
     public int inputNumber = 1;
     public int playerScore = 0;
     public int playerLives = 3;

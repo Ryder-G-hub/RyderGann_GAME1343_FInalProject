@@ -1883,6 +1883,8 @@ MonoBehaviour:
   jumpOverCheckDistance: 4
   scoreText: {fileID: 179059619}
   livesText: {fileID: 1943558744}
+  clip_jump: {fileID: 8300000, guid: e040055ec3412f149a495c6b4ef20361, type: 3}
+  clip_hit: {fileID: 8300000, guid: d48f5a32499624d42a6f67eb7d20e97d, type: 3}
   inputNumber: 1
   playerScore: 0
   playerLives: 3
